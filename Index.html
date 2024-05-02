@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <title>Oh my food</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="OhMyFood.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!------ Header ------>
     <header>
         <div class="site-title">
-           <img src="Images&textes/images/logo/" alt="logo">
+           <img src="Images&textes/images/logo/ohmyfood@2x.svg" alt="logo">
         </div>
         <div class="restau-location">
             <i class="fa-solid fa-location-dot"></i>
@@ -28,7 +29,9 @@
     <div class="intro">
         <h1>Réservez le menu qui vous convient</h1>
         <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-        <a href="#restaurants">Explorer nos restaurants</a>
+        <div class="button">
+            <a href="#restaurants">Explorer nos restaurants</a>
+        </div>
     </div>
 
     <!------ Section Fonctionnement ------>
@@ -116,9 +119,15 @@
     <!------ Footer ------>
     <footer>
         <div class="footer">
-            <img src="Images&textes/images/logo/ohmyfood.png" alt="logo">
-            <i class="fa-solid fa-utensils"></i> <p>Proposer un restaurant</p>
-            <i class="fa-solid fa-handshake-angle"></i> <p>Devenie partenaire</p>
+            <img src="Images&textes/images/logo/ohmyfood@2x.svg" alt="logo">
+            <div class="logo-txt">
+                <i class="fa-solid fa-utensils"></i>
+                <p>Proposer un restaurant</p>
+            </div>
+            <div class="logo-txt">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <p>Devenie partenaire</p>
+            </div>
             <p>Mentions légales</p>
             <p>Contact</p>
         </div>
