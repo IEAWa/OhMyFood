@@ -1,0 +1,32 @@
+
+/**** Header ****/
+
+.logo {
+    @include center-elements;
+    height: 63px;
+    position: relative;
+    z-index: 15;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+
+    img {
+        height: 44px;
+        width: 162px;  
+    }
+}
+
+.restau-location {
+    position: relative;
+    z-index: 12;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+
+
+    & a {
+    @include center-elements;
+    height: 50px;
+    background-color: $second-background-color;
+    
+         i {padding-right: 14px;}
+         p {font-weight: 500}
+}
+}
+

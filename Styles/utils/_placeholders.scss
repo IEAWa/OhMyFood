@@ -1,0 +1,16 @@
+
+
+/*Centrer les éléments*/
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;} 
+
+
+/*Centrer en colonne*/
+
+%flex-center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;}

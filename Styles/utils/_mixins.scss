@@ -1,0 +1,16 @@
+
+/*Mixin: centrer les éléments*/
+
+@mixin center-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;} 
+
+
+/*Mixin: centrer en colonne*/
+
+@mixin center-elements-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+

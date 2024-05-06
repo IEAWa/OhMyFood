@@ -1,0 +1,24 @@
+
+/***** Footer *****/
+
+.footer {
+    background-color: $third-background-color;
+    color: white;
+    padding: 10px 0px 10px 20px;
+
+    img {
+        filter: invert(1);
+        height: 27px;
+        width: 139px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+   
+    .logo-txt {
+        display: flex;
+
+        i {padding-right: 5px;}
+        p {padding-bottom: 10px;}
+}
+    p {padding-bottom: 7px;}
+}
