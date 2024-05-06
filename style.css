@@ -1,0 +1,124 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0 auto 0 auto;
+  padding: 0;
+  max-width: 767, 98px;
+}
+
+h1, h2, h3 {
+  font-size: 24px;
+}
+
+/* Variables couleurs */
+/***** Header *****/
+/*Mixin*/
+/**/
+.site-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.site-title .img {
+  width: 162px;
+  height: 44px;
+}
+
+.restau-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: #EAEAEA;
+}
+
+.restau-location i {
+  padding: 10px;
+}
+
+/***** Intro *****/
+/*Mixin*/
+/**/
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F3F3F3;
+  padding: 15px 0 20px 0;
+}
+.intro .button {
+  width: 218px;
+  height: 50px;
+  font-size: 16px;
+  color: white;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro a {
+  color: white;
+  text-decoration: none;
+}
+
+/***** Section Fonctionnement *****/
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section .number {
+  color: white;
+  background-color: #9356DC;
+  position: relative;
+  right: -30px;
+  padding: 7px;
+  border-radius: 50%;
+}
+.section .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 10px 20px 10px 20px;
+  background-color: #F3F3F3;
+  border-radius: 15px;
+  margin: 15px;
+}
+.section .card p {
+  padding-left: 10px;
+}
+
+/***** Section Restaurants *****/
+.restaurants {
+  background-color: #F3F3F3;
+  padding: 10px;
+}
+.restaurants .card {
+  height: 251px;
+  border-radius: 10px;
+  background-color: white;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 15px;
+}
+.restaurants img {
+  height: 75%;
+}
+.restaurants .card-content {
+  display: flex;
+  justify-content: space-between;
+}
+.restaurants .card-txt {
+  text-decoration: none;
+}
+
+/***** Footer *****/
+.footer {
+  color: white;
+  background-color: #353535;
+}/*# sourceMappingURL=style.css.map */
