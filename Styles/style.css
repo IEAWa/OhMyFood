@@ -3,7 +3,7 @@
 /* Variables couleurs de fond*/
 /* Ombres des boutons et cards*/
 /*Centrer les éléments*/
-.new, .restaurants-cards, .fonctionnement .section .box, .fonctionnement .section .number, .fonctionnement .section, .intro .button {
+.new, .restaurants-cards, .fonctionnement .section .box, .fonctionnement .section .number, .fonctionnement .section, .intro .button, .order-section .button, .order-section, .restau-location, .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +16,6 @@
   align-items: center;
 }
 
-/*Mixin: centrer les éléments*/
-/*Mixin: centrer en colonne*/
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -30,6 +28,8 @@ body {
 
 h1, h2, h3 {
   font-size: 24px;
+  padding: 30px 20px 10px 20px;
+  margin: 0;
 }
 
 a {
@@ -37,111 +37,254 @@ a {
   color: black;
 }
 
-h4 {
-  margin: auto;
-}
-
 p {
   margin: 0;
 }
 
-/**** Header ****/
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 63px;
+h4 {
+  font-family: "shrikhand";
+  font-size: 28px;
+}
+
+h5 {
+  margin: 0;
+  padding-bottom: 5px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/*** les premières lignes de toutes les cards ont une police diférente ****/
+.font-heavy-para {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/**** Je donne un index-z différent au logo, emplacement et main pour afficher l'effet 
+ d'ombre des deux premiers sur la page d'acceuil ****/
+.index-logo {
   position: relative;
-  z-index: 15;
+  z-index: 3;
+}
+
+.index-location {
+  position: relative;
+  z-index: 2;
+}
+
+.index-main {
+  position: relative;
+  z-index: 1;
+}
+
+/**** Header ****/
+/*** Logo ***/
+.logo {
+  height: 63px;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.logo i {
+  font-size: 18px;
+  position: relative;
+  right: 70px;
 }
 .logo img {
   height: 44px;
   width: 162px;
 }
 
+/*** Emplacement du restaurant: en champ de saisie ***/
 .restau-location {
-  position: relative;
-  z-index: 12;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
-}
-.restau-location a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 50px;
   background-color: #EAEAEA;
 }
-.restau-location a i {
-  padding-right: 14px;
-}
-.restau-location a p {
+.restau-location .location-input {
+  width: 120px;
+  font-size: 15px;
   font-weight: 500;
+  background-color: #EAEAEA;
+  padding-left: 10px;
+  border: none;
 }
 
 /***** Footer *****/
-.footer {
+footer {
   background-color: #353535;
   color: white;
-  padding: 10px 0px 10px 20px;
+  padding: 10px 0px 20px 20px;
 }
-.footer img {
-  filter: invert(1);
-  height: 27px;
-  width: 139px;
+footer .logo-txt {
+  font-family: "shrikhand";
+  font-weight: 400;
+  font-size: 18px;
   margin-bottom: 15px;
   margin-top: 15px;
 }
-.footer .logo-txt {
+footer .icon-txt {
   display: flex;
+  align-items: center;
 }
-.footer .logo-txt i {
-  padding-right: 5px;
+footer .icon-txt i {
+  padding: 0 10px 10px 0;
 }
-.footer .logo-txt p {
+footer .icon-txt p {
   padding-bottom: 10px;
 }
-.footer p {
-  padding-bottom: 7px;
+footer p {
+  padding-bottom: 5px;
+}
+footer a {
+  color: white;
+}
+
+/****** Page 1 du site *******/
+.menu-image img {
+  height: 275px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.main {
+  background-color: #F3F3F3;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  position: relative;
+  top: -55px;
+  margin-bottom: -55px;
+}
+
+.restau-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 15px;
+}
+
+/***** Menus ******/
+section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+section .section-title {
+  margin-left: 15px;
+  width: 45px;
+  border-bottom: 3px #99E2D0 solid;
+}
+section .menu-card {
+  background-color: white;
+  font-weight: 500;
+  border-radius: 20px;
+  margin: 10px 10px 0 10px;
+  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
+}
+section .menu-card-content {
+  display: flex;
+  flex: 4;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+section .menu-card-txt {
+  text-overflow: ellipsis;
+}
+section .menu-card p {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 2px 0 0 20px;
+}
+section .menu-card .font-heavy-para {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 7px 0 0 20px;
+}
+section .menu-card .price {
+  font-size: 15px;
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+/*** partie des cards qui sera en animation ****/
+.card-check {
+  display: flex;
+}
+.card-check .check {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 59px;
+  background-color: #99E2D0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.card-check .check .fa-regular.fa-circle-check {
+  font-size: 25px;
+  background-color: white;
+  color: #99E2D0;
+  -webkit-clip-path: circle(40%);
+          clip-path: circle(40%);
+}
+
+/******* Bouton pour commander ********/
+.order-section {
+  padding: 10px 0 25px;
+}
+.order-section .button {
+  width: 218px;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
+}
+.order-section .button:hover {
+  background: linear-gradient(#FF79DA, #9356DC);
+  filter: brightness(108%);
+  box-shadow: 1px 9px 9px rgba(0, 0, 0, 0.2);
+}
+.order-section .button a {
+  color: white;
 }
 
 /***** Intro *****/
 .intro {
   background-color: #F3F3F3;
-  padding: 15px 25px 50px 25px;
+  padding: 0 25px 50px 25px;
   text-align: center;
 }
 .intro p {
-  margin-bottom: 25px;
+  padding: 15px 0 20px 0;
+  font-size: 18px;
 }
 .intro .button {
   width: 218px;
   height: 50px;
   font-size: 16px;
-  color: white;
   border-radius: 30px;
   background: linear-gradient(#FF79DA, #9356DC);
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
 }
-.intro .button a {
+.intro .button > a {
   color: white;
   text-decoration: none;
 }
 
 /***** Section Fonctionnement *****/
 .fonctionnement {
-  margin-bottom: 40px;
-}
-.fonctionnement h2 {
-  margin: 40px 0px 10px 15px;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  background-color: white;
 }
 .fonctionnement .section .number {
   height: 24px;
   width: 24px;
   color: white;
   background-color: #9356DC;
-  position: relative;
-  right: -25px;
+  position: absolute;
+  left: 14px;
   border-radius: 50%;
 }
 .fonctionnement .section .box {
@@ -150,25 +293,22 @@ p {
   padding: 10px 20px 10px 20px;
   background-color: #F3F3F3;
   border-radius: 20px;
-  position: relative;
-  left: -5px;
-  margin: 15px;
-  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  margin: 15px 20px 15px 25px;
+  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
 }
 .fonctionnement .section .box i {
   color: grey;
 }
 .fonctionnement .section .box p {
-  padding-left: 10px;
+  padding: 10px 0 10px 10px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /***** Section Restaurants *****/
 .restaurants {
   background-color: #F3F3F3;
-  padding: 10px;
-}
-.restaurants h3 {
-  margin-left: 15px;
+  padding: 10px 10px 40px 10px;
 }
 
 .new {
@@ -177,9 +317,9 @@ p {
   color: #008766;
   height: 29px;
   width: 80px;
-  position: relative;
-  left: 250px;
-  top: 50px;
+  position: absolute;
+  top: 10px;
+  left: 230px;
 }
 
 .card {
@@ -187,6 +327,7 @@ p {
   border-radius: 15px;
   background-color: white;
   margin: 15px;
+  position: relative;
 }
 .card img {
   height: 75%;
@@ -199,11 +340,33 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 5px 10px 5px 7px;
+  padding: 7px 20px 7px 20px;
 }
-.card h4, .card p {
-  padding: 2px;
+.card .card-content .fa-solid.fa-heart {
+  background: linear-gradient(#9356DC, #FF79DA);
 }
-.card i {
+.card .card-content .fa-regular.fa-heart:active {
+  display: none;
+}
+
+p {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 2px 0 2px;
+}
+
+/*Pareil ici, je me répéte; j'ai dû le
+ré-écrire ici (prcqu'il est trop imbriqué
+dans _pagesRestaurant???)*/
+.font-heavy-para {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+i {
   font-size: 20px;
+}
+
+input[type=checkbox] {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

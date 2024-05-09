@@ -6,6 +6,7 @@
 @import "base/_base.scss";
 @import "layouts/_header.scss";
 @import "layouts/_footer.scss";
+@import "layouts/_pagesRestaurants.scss";
 
 
 
@@ -14,30 +15,30 @@
 .intro {
     @extend %flex-center-column;
     background-color: $main-background-color;
-    padding: 15px 25px 50px 25px;
+    padding: 0 25px 50px 25px;
     text-align: center;
 
-    p {margin-bottom: 25px;}
+    p {padding: 15px 0 20px 0;
+       font-size: 18px}
 
     .button {
         @include button;
         @extend %flex-center;
         box-shadow: $box-shadow;
         
-        a {
+        & > a {
             color: white;
             text-decoration: none;
         }
     }
-
 }
 
 /***** Section Fonctionnement *****/
 
 .fonctionnement {
-    margin-bottom: 40px;
-
-    h2 {margin: 40px 0px 10px 15px}
+    margin-top: 15px;
+    margin-bottom: 50px;
+    background-color: white;
 
     .section {
             @extend %flex-center;
@@ -48,8 +49,8 @@
             width: 24px;
             color: white;
             background-color: $main-color;
-            position: relative;
-            right: -25px;
+            position: absolute;
+            left: 14px;
             border-radius: 50%;
         }
 
@@ -60,14 +61,15 @@
             padding: 10px 20px 10px 20px;
             background-color: $main-background-color;
             border-radius: 20px;
-            position: relative;
-            left: -5px;
-            margin: 15px;
+            margin: 15px 20px 15px 25px;
             box-shadow: $box-shadow;
 
             i {color: grey;}
 
-            p {padding-left: 10px;}
+            p {padding: 10px 0 10px 10px;
+            font-size: 14px;
+            font-weight: 500;
+            }
         }
     }
 }
@@ -76,9 +78,7 @@
 
 .restaurants {
     background-color: $main-background-color;
-    padding: 10px;
-    
-    h3 {margin-left: 15px;}
+    padding: 10px 10px 40px 10px;
 }
 
 .restaurants-cards {
@@ -92,17 +92,17 @@
     color: #008766;
     height: 29px;
     width: 80px;
-    position: relative;
-    left: 250px;
-    top: 50px;
+    position: absolute;
+    top: 10px;
+    left: 230px;
 }    
 
 .card {
     height: 251px;
     border-radius: 15px;
     background-color: white;
-    margin: 15px;   
-    
+    margin: 15px;
+    position: relative;   
     img {
         height: 75%;
         width: 100%;
@@ -114,14 +114,40 @@
         display: flex;
         align-items: center;
         justify-content: space-between; 
-        margin: 5px 10px 5px 7px;
-    }
+        padding: 7px 20px 7px 20px;
 
-    h4, p {
-        padding: 2px;
-    }
+        
+        .fa-solid.fa-heart  {
+            background: linear-gradient($main-color,$second-main-color)
+        }
+
+        .fa-regular.fa-heart:active {
+            display: none;
+        }
+    }       
+}
+
+
+
+    p {
+        font-size: 15px;
+        font-weight: 300;
+        padding: 2px 0 2px;}
     
-    i {
-        font-size: 20px;
-    }
+    /*Pareil ici, je me répéte; j'ai dû le
+    ré-écrire ici (prcqu'il est trop imbriqué
+    dans _pagesRestaurant???)*/
+    .font-heavy-para {
+        font-size: 18px;
+        font-weight: 500;}     
+    
+    i {font-size: 20px;}
+
+
+input[type=checkbox] {
+    display: none;
+}
+
+input:checked + label {
+    
 }

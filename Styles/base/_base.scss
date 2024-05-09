@@ -7,15 +7,52 @@ body {
     max-width: 767,98px;
 }
 
-h1, h2, h3 { font-size: 24px } 
+h1, h2, h3 { 
+    font-size: 24px;
+    padding: 30px 20px 10px 20px;
+    margin: 0;
+} 
 
 a {
     text-decoration: none;
     color: black;
 }
 
+p { margin: 0; }
+
+
 h4 {
-    margin: auto;
+    font-family: 'shrikhand';
+    font-size: 28px;
 }
 
-p { margin: 0; }
+h5 {
+    margin: 0;
+    padding-bottom: 5px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/*** les premières lignes de toutes les cards ont une police diférente ****/
+.font-heavy-para {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/**** Je donne un index-z différent au logo, emplacement et main pour afficher l'effet 
+ d'ombre des deux premiers sur la page d'acceuil ****/
+
+ .index-logo {
+    position: relative;
+    z-index: 3;
+ }
+
+ .index-location {
+    position: relative;
+    z-index: 2;
+}
+
+.index-main {
+    position: relative;
+    z-index: 1
+}

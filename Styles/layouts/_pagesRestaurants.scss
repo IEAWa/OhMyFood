@@ -1,0 +1,119 @@
+ 
+ /****** Page 1 du site *******/
+
+
+.menu-image {
+    img {
+    height: 275px;
+    width: 100%;
+    object-fit: cover;}
+}
+
+.main {
+    background-color: $main-background-color;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    position: relative;
+    top: -55px;
+    margin-bottom: -55px;
+}
+
+.restau-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 15px;
+}
+
+
+  /***** Menus ******/
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+
+    .section-title {
+        margin-left: 15px;
+        width: 45px;
+        border-bottom: 3px $third-main-color solid;
+    }
+
+    .menu-card {
+        background-color: white;
+        font-weight: 500;
+        border-radius: 20px;
+        margin: 10px 10px 0 10px;
+        box-shadow: $box-shadow;
+  
+        &-content {
+            display: flex;
+            flex: 4;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 10px;
+        }
+
+        &-txt {
+            text-overflow: ellipsis;
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 300;
+            padding: 2px 0 0 20px;
+        }
+        .font-heavy-para {
+            font-size: 18px;
+            font-weight: 500;
+            padding: 7px 0 0 20px;
+        }
+        .price {
+            font-size: 15px;
+            font-weight: 500;
+            padding-right: 10px;
+        }
+
+    }
+}
+
+/*** partie des cards qui sera en animation ****/
+
+.card-check {
+    display: flex;
+        
+    .check {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        height: 59px;
+        background-color: $third-main-color;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        
+        .fa-regular.fa-circle-check {
+            font-size: 25px;
+            background-color: white;
+            color: $third-main-color;
+            clip-path: circle(40%);
+        }
+    }
+}
+
+
+ /******* Bouton pour commander ********/
+
+.order-section {
+    @extend %flex-center;
+    padding: 10px 0 25px;
+
+    .button {
+        @include button;
+        @extend %flex-center;
+        &:hover {
+            @include hover-button;
+            }  
+        a { color: white; }
+    }  
+}
