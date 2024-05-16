@@ -1,0 +1,68 @@
+
+
+/*** Animations checked menus *****/ 
+ 
+.check {   
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $third-main-color;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform-origin: right;
+
+    .fa-regular.fa-circle-check {
+        font-size: 25px;
+        background-color: white;
+        color: $third-main-color;
+        clip-path: circle(40%);
+    }
+}
+
+
+@keyframes checked {
+    0% { transform: scaleX(0);}
+}
+
+.menu-card-content:active + .check {
+    animation: checked 200ms both;
+}
+
+.menu-card-content:not(:active) + .check {
+    display: none;
+}
+
+
+
+/*** Apparition progressive des cartes menu***/
+
+@keyframes slide-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes slide-in-2 {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes slide-in-3 {
+    0% {opacity: 0;}
+    75% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+.animation-entrées {
+    animation: slide-in 400ms;
+}
+
+.animation-plats {
+    animation: slide-in-2 800ms;
+}
+
+.animation-desserts {
+    animation: slide-in-3 1.2s;
+}

@@ -1,13 +1,14 @@
 @import "utils/_variables.scss";
 @import "utils/placeholders.scss";
 @import "utils/_mixins.scss";
-@import "utils/_functions.scss";
 @import "components/_buttons.scss";
+@import "components/_icones-favoris.scss";
 @import "base/_base.scss";
 @import "layouts/_header.scss";
 @import "layouts/_footer.scss";
 @import "layouts/_pagesRestaurants.scss";
-
+@import "animations/_animations.scss";
+@import "responsive/desktop.scss";
 
 
 /***** Intro *****/
@@ -18,18 +19,11 @@
     padding: 0 25px 50px 25px;
     text-align: center;
 
-    p {padding: 15px 0 20px 0;
+    &--para {padding: 15px 0 20px 0;
        font-size: 18px}
 
-    .button {
-        @include button;
-        @extend %flex-center;
+    a {
         box-shadow: $box-shadow;
-        
-        & > a {
-            color: white;
-            text-decoration: none;
-        }
     }
 }
 
@@ -40,7 +34,7 @@
     margin-bottom: 50px;
     background-color: white;
 
-    .section {
+     .section {
             @extend %flex-center;
 
         .number {
@@ -51,7 +45,7 @@
             background-color: $main-color;
             position: absolute;
             left: 14px;
-            border-radius: 50%;
+            border-radius: 50%;    
         }
 
         .box {
@@ -64,9 +58,9 @@
             margin: 15px 20px 15px 25px;
             box-shadow: $box-shadow;
 
-            i {color: grey;}
+            & > i {color: grey;}
 
-            p {padding: 10px 0 10px 10px;
+            & > p {padding: 10px 0 10px 10px;
             font-size: 14px;
             font-weight: 500;
             }
@@ -79,75 +73,41 @@
 .restaurants {
     background-color: $main-background-color;
     padding: 10px 10px 40px 10px;
-}
-
-.restaurants-cards {
+    
+    &--cards {
     @extend %flex-center;
+    }
 }
-
-.new {
-    background-color: $third-main-color;
-    @extend %flex-center;
-    border-radius: 2px;
-    color: #008766;
-    height: 29px;
-    width: 80px;
-    position: absolute;
-    top: 10px;
-    left: 230px;
-}    
 
 .card {
     height: 251px;
     border-radius: 15px;
     background-color: white;
     margin: 15px;
-    position: relative;   
-    img {
+    position: relative;  
+
+    & > img {
         height: 75%;
         width: 100%;
         border-radius: 15px 15px 0 0;
         object-fit: cover;
     }
-
-    .card-content {
+    &--content {
         display: flex;
         align-items: center;
         justify-content: space-between; 
         padding: 7px 20px 7px 20px;
-
         
-        .fa-solid.fa-heart  {
-            background: linear-gradient($main-color,$second-main-color)
-        }
-
-        .fa-regular.fa-heart:active {
-            display: none;
-        }
-    }       
-}
-
-
-
-    p {
-        font-size: 15px;
-        font-weight: 300;
-        padding: 2px 0 2px;}
-    
-    /*Pareil ici, je me répéte; j'ai dû le
-    ré-écrire ici (prcqu'il est trop imbriqué
-    dans _pagesRestaurant???)*/
-    .font-heavy-para {
-        font-size: 18px;
-        font-weight: 500;}     
-    
-    i {font-size: 20px;}
-
-
-input[type=checkbox] {
-    display: none;
-}
-
-input:checked + label {
-    
+        & + .new {
+        background-color: $third-main-color;
+        @extend %flex-center;
+        border-radius: 2px;
+        color: #008766;
+        height: 29px;
+        width: 80px;
+        position: absolute;
+        top: 15px;
+        left: 270px;
+        } 
+    }   
 }

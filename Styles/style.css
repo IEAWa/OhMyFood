@@ -3,7 +3,7 @@
 /* Variables couleurs de fond*/
 /* Ombres des boutons et cards*/
 /*Centrer les éléments*/
-.new, .restaurants-cards, .fonctionnement .section .box, .fonctionnement .section .number, .fonctionnement .section, .intro .button, .order-section .button, .order-section, .restau-location, .logo {
+.card--content + .new, .restaurants--cards, .fonctionnement .section .box, .fonctionnement .section .number, .fonctionnement .section, .order-section .button, .order-section, .restau-location, .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +16,55 @@
   align-items: center;
 }
 
+/*** Style des boutons ***/
+.button {
+  border-radius: 30px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*** Style du contenu des boutons***/
+.btn {
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 15px 25px;
+}
+
+/*** Le padding horizontal des boutons 'commander'
+est plus large***/
+.btn-padding {
+  padding: 15px 35px;
+}
+
+/*** Icone favoris ***/
+.favorite {
+  cursor: pointer;
+  padding-right: 30px;
+}
+.favorite i {
+  position: absolute;
+  font-size: 22px;
+  bottom: 20px;
+}
+.favorite--full {
+  opacity: 0;
+  background: linear-gradient(#9356DC, #FF79DA);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.favorite--full:hover, .favorite--full:active {
+  opacity: 1;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  color: transparent;
+  display: inline;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+
+/*** Général ***/
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -26,18 +75,20 @@ body {
   max-width: 767, 98px;
 }
 
-h1, h2, h3 {
-  font-size: 24px;
-  padding: 30px 20px 10px 20px;
+/*** Titres, texte, liens, icones ***/
+p {
   margin: 0;
 }
 
-a {
-  text-decoration: none;
-  color: black;
+p {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 2px 0 2px;
 }
 
-p {
+h1, h2, h3 {
+  font-size: 24px;
+  padding: 30px 20px 10px 20px;
   margin: 0;
 }
 
@@ -53,25 +104,34 @@ h5 {
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+i {
+  font-size: 16px;
+}
+
 /*** les premières lignes de toutes les cards ont une police diférente ****/
 .font-heavy-para {
   font-size: 18px;
   font-weight: 500;
 }
 
-/**** Je donne un index-z différent au logo, emplacement et main pour afficher l'effet 
+/**** Je donne un z-index différent au logo, emplacement et main pour afficher l'effet 
  d'ombre des deux premiers sur la page d'acceuil ****/
-.index-logo {
+.z-index-logo {
   position: relative;
   z-index: 3;
 }
 
-.index-location {
+.z-index-location {
   position: relative;
   z-index: 2;
 }
 
-.index-main {
+.z-index-main {
   position: relative;
   z-index: 1;
 }
@@ -79,7 +139,6 @@ h5 {
 /**** Header ****/
 /*** Logo ***/
 .logo {
-  height: 63px;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .logo i {
@@ -88,6 +147,7 @@ h5 {
   right: 70px;
 }
 .logo img {
+  padding: 15px 0 15px 0;
   height: 44px;
   width: 162px;
 }
@@ -138,8 +198,7 @@ footer a {
 }
 
 /****** Page 1 du site *******/
-.menu-image img {
-  height: 275px;
+.menu-image > img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -154,6 +213,8 @@ footer a {
   margin-bottom: -55px;
 }
 
+/***** Nom du restaurant *****/
+/* Le coeur est dans /components/_icones */
 .restau-title {
   display: flex;
   justify-content: space-between;
@@ -172,72 +233,47 @@ section .section-title {
   width: 45px;
   border-bottom: 3px #99E2D0 solid;
 }
-section .menu-card {
+
+.menu-card {
   background-color: white;
   font-weight: 500;
   border-radius: 20px;
   margin: 10px 10px 0 10px;
   box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
-}
-section .menu-card-content {
   display: flex;
-  flex: 4;
+}
+.menu-card-content {
+  display: flex;
+  flex: 5;
   justify-content: space-between;
   align-items: flex-end;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
-section .menu-card-txt {
-  text-overflow: ellipsis;
+.menu-card-txt {
+  overflow: hidden;
 }
-section .menu-card p {
-  font-size: 15px;
-  font-weight: 300;
-  padding: 2px 0 0 20px;
-}
-section .menu-card .font-heavy-para {
+.menu-card-txt .font-heavy-para {
   font-size: 18px;
   font-weight: 500;
-  padding: 7px 0 0 20px;
+  padding: 12px 0 0 20px;
 }
-section .menu-card .price {
+.menu-card-txt p {
+  font-size: 15px;
+  font-weight: 300;
+  padding: 5px 0 0 20px;
+}
+.menu-card-txt .overflow {
+  text-overflow: ellipsis;
+}
+.menu-card .price {
   font-size: 15px;
   font-weight: 500;
-  padding-right: 10px;
-}
-
-/*** partie des cards qui sera en animation ****/
-.card-check {
-  display: flex;
-}
-.card-check .check {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  height: 59px;
-  background-color: #99E2D0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.card-check .check .fa-regular.fa-circle-check {
-  font-size: 25px;
-  background-color: white;
-  color: #99E2D0;
-  -webkit-clip-path: circle(40%);
-          clip-path: circle(40%);
+  padding-right: 12px;
 }
 
 /******* Bouton pour commander ********/
 .order-section {
   padding: 10px 0 25px;
-}
-.order-section .button {
-  width: 218px;
-  height: 50px;
-  font-size: 16px;
-  border-radius: 30px;
-  background: linear-gradient(#FF79DA, #9356DC);
-  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
 }
 .order-section .button:hover {
   background: linear-gradient(#FF79DA, #9356DC);
@@ -248,28 +284,115 @@ section .menu-card .price {
   color: white;
 }
 
+/*** Animations checked menus *****/
+.check {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transform-origin: right;
+}
+.check .fa-regular.fa-circle-check {
+  font-size: 25px;
+  background-color: white;
+  color: #99E2D0;
+  -webkit-clip-path: circle(40%);
+          clip-path: circle(40%);
+}
+
+@keyframes checked {
+  0% {
+    transform: scaleX(0);
+  }
+}
+.menu-card-content:active + .check {
+  animation: checked 200ms both;
+}
+
+.menu-card-content:not(:active) + .check {
+  display: none;
+}
+
+/*** Apparition progressive des cartes menu***/
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-in-2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-in-3 {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animation-entrées {
+  animation: slide-in 400ms;
+}
+
+.animation-plats {
+  animation: slide-in-2 800ms;
+}
+
+.animation-desserts {
+  animation: slide-in-3 1.2s;
+}
+
+@media screen and (min-width: 768px) {
+  /********* Page d'acceuil ********/
+  /**** Fonctionnement ****/
+  .fonctionnement .boxes-direction {
+    display: flex;
+  }
+  /**** Restaurants ****/
+  .restaurant--cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  a .cards {
+    width: 45%;
+  }
+  /**** Footer ****/
+  footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  /********* Pages des menus *******/
+}
 /***** Intro *****/
 .intro {
   background-color: #F3F3F3;
   padding: 0 25px 50px 25px;
   text-align: center;
 }
-.intro p {
+.intro--para {
   padding: 15px 0 20px 0;
   font-size: 18px;
 }
-.intro .button {
-  width: 218px;
-  height: 50px;
-  font-size: 16px;
-  border-radius: 30px;
-  background: linear-gradient(#FF79DA, #9356DC);
+.intro a {
   box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
-  box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
-}
-.intro .button > a {
-  color: white;
-  text-decoration: none;
 }
 
 /***** Section Fonctionnement *****/
@@ -296,10 +419,10 @@ section .menu-card .price {
   margin: 15px 20px 15px 25px;
   box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
 }
-.fonctionnement .section .box i {
+.fonctionnement .section .box > i {
   color: grey;
 }
-.fonctionnement .section .box p {
+.fonctionnement .section .box > p {
   padding: 10px 0 10px 10px;
   font-size: 14px;
   font-weight: 500;
@@ -310,18 +433,6 @@ section .menu-card .price {
   background-color: #F3F3F3;
   padding: 10px 10px 40px 10px;
 }
-
-.new {
-  background-color: #99E2D0;
-  border-radius: 2px;
-  color: #008766;
-  height: 29px;
-  width: 80px;
-  position: absolute;
-  top: 10px;
-  left: 230px;
-}
-
 .card {
   height: 251px;
   border-radius: 15px;
@@ -329,44 +440,26 @@ section .menu-card .price {
   margin: 15px;
   position: relative;
 }
-.card img {
+.card > img {
   height: 75%;
   width: 100%;
   border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.card .card-content {
+.card--content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 7px 20px 7px 20px;
 }
-.card .card-content .fa-solid.fa-heart {
-  background: linear-gradient(#9356DC, #FF79DA);
-}
-.card .card-content .fa-regular.fa-heart:active {
-  display: none;
-}
-
-p {
-  font-size: 15px;
-  font-weight: 300;
-  padding: 2px 0 2px;
-}
-
-/*Pareil ici, je me répéte; j'ai dû le
-ré-écrire ici (prcqu'il est trop imbriqué
-dans _pagesRestaurant???)*/
-.font-heavy-para {
-  font-size: 18px;
-  font-weight: 500;
-}
-
-i {
-  font-size: 20px;
-}
-
-input[type=checkbox] {
-  display: none;
+.card--content + .new {
+  background-color: #99E2D0;
+  border-radius: 2px;
+  color: #008766;
+  height: 29px;
+  width: 80px;
+  position: absolute;
+  top: 15px;
+  left: 270px;
 }/*# sourceMappingURL=style.css.map */

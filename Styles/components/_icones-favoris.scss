@@ -1,0 +1,28 @@
+
+/*** Icone favoris ***/
+
+.favorite {
+    cursor: pointer;
+    padding-right: 30px;
+    
+    & i {
+        position: absolute;
+        font-size: 22px;
+        bottom: 20px;
+    }
+    
+    &--full {
+        opacity: 0;
+        background: linear-gradient($main-color,$second-main-color);
+        color: transparent;
+        background-clip: text;
+            
+        &:hover, &:active {
+            opacity: 1;
+            background-image: linear-gradient($main-color,$second-main-color);
+            color: transparent;
+            display: inline;
+            background-clip: text;
+        }
+    } 
+}

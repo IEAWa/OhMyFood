@@ -1,0 +1,40 @@
+
+
+@media screen and (min-width:768px) {
+
+    /********* Page d'acceuil ********/
+
+/**** Fonctionnement ****/
+
+.fonctionnement {
+    .boxes-direction {
+        display: flex;
+}
+}
+
+/**** Restaurants ****/
+.restaurant--cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;   
+}
+
+a {
+.cards {
+        width: 45%;
+    }}
+
+
+/**** Footer ****/
+footer {
+    display: flex;
+    justify-content: flex-end;
+
+    .logo-txt {
+
+    }
+}
+
+     /********* Pages des menus *******/
+
+}

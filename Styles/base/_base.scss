@@ -1,4 +1,4 @@
-
+/*** Général ***/
 * { font-family: 'Roboto', sans-serif; }
 
 body {
@@ -7,19 +7,21 @@ body {
     max-width: 767,98px;
 }
 
+/*** Titres, texte, liens, icones ***/
+
+p { margin: 0; }
+
+p {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 2px 0 2px;}   
+
+
 h1, h2, h3 { 
     font-size: 24px;
     padding: 30px 20px 10px 20px;
     margin: 0;
 } 
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-p { margin: 0; }
-
 
 h4 {
     font-family: 'shrikhand';
@@ -33,26 +35,36 @@ h5 {
     font-size: 16px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+i {
+    font-size: 16px;
+}
+
 /*** les premières lignes de toutes les cards ont une police diférente ****/
 .font-heavy-para {
     font-size: 18px;
     font-weight: 500;
 }
 
-/**** Je donne un index-z différent au logo, emplacement et main pour afficher l'effet 
+
+/**** Je donne un z-index différent au logo, emplacement et main pour afficher l'effet 
  d'ombre des deux premiers sur la page d'acceuil ****/
 
- .index-logo {
+ .z-index-logo {
     position: relative;
     z-index: 3;
  }
 
- .index-location {
+ .z-index-location {
     position: relative;
     z-index: 2;
 }
 
-.index-main {
+.z-index-main {
     position: relative;
     z-index: 1
 }
