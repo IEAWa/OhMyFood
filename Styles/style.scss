@@ -35,7 +35,8 @@
     background-color: white;
 
      .section {
-            @extend %flex-center;
+            display: flex;
+            flex: 1;
 
         .number {
             @extend %flex-center;

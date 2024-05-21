@@ -29,7 +29,9 @@
 /*** Emplacement du restaurant: en champ de saisie ***/
 .restau-location {
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
-    @extend %flex-center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50px;
     background-color: $second-background-color;
 

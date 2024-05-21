@@ -33,3 +33,16 @@ section {
     padding: 0 210px 40px 210px;
 }
 }
+
+
+/**** Loader animation dimensions****/
+
+.loader::before {
+    width: 390px;
+    height: 390px;
+}
+
+.loader::after {
+    width: 350px;
+    height: 350px;
+}

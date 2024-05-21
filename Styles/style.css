@@ -3,7 +3,7 @@
 /* Variables couleurs de fond*/
 /* Ombres des boutons et cards*/
 /*Centrer les éléments*/
-.card--content + .new, .restaurants--cards, .fonctionnement .section .box--content, .fonctionnement .section .box, .fonctionnement .section .number, .fonctionnement .section, .order-section .button, .order-section, .restau-location {
+.card--content + .new, .restaurants--cards, .fonctionnement .section .box--content, .fonctionnement .section .box, .fonctionnement .section .number, .order-section .button, .order-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,6 +167,9 @@ i {
 /*** Emplacement du restaurant: en champ de saisie ***/
 .restau-location {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   background-color: #EAEAEA;
 }
@@ -265,6 +268,7 @@ section .section-title {
 }
 .menu-card-txt {
   overflow: hidden;
+  white-space: nowrap;
 }
 .menu-card-txt .font-heavy-para {
   font-size: 18px;
@@ -276,7 +280,7 @@ section .section-title {
   font-weight: 300;
   padding: 5px 0 0 20px;
 }
-.menu-card-txt .overflow {
+.menu-card .overflow {
   text-overflow: ellipsis;
 }
 .menu-card .price {
@@ -402,6 +406,17 @@ section .section-title {
     padding: 0 210px 40px 210px;
   }
 }
+/**** Loader animation dimensions****/
+.loader::before {
+  width: 390px;
+  height: 390px;
+}
+
+.loader::after {
+  width: 350px;
+  height: 350px;
+}
+
 @media screen and (min-width: 767.8px) {
   /********* Page d'acceuil ********/
   h1 {
@@ -488,6 +503,10 @@ section .section-title {
   margin-top: 15px;
   margin-bottom: 50px;
   background-color: white;
+}
+.fonctionnement .section {
+  display: flex;
+  flex: 1;
 }
 .fonctionnement .section .number {
   height: 24px;

@@ -60,6 +60,7 @@ section {
 
     &-txt {
         overflow: hidden;
+        white-space: nowrap;
 
         .font-heavy-para {
             font-size: 18px;
@@ -71,10 +72,11 @@ section {
             font-weight: 300;
             padding: 5px 0 0 20px;
         }   
-        .overflow {
-        text-overflow: ellipsis;
-        }        
-    }
+}       
+    .overflow {
+        text-overflow: ellipsis;      
+    }   
+    
     .price {
         font-size: 15px;
         font-weight: 500;
