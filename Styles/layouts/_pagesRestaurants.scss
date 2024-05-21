@@ -49,38 +49,31 @@ section {
     margin: 10px 10px 0 10px;
     box-shadow: $box-shadow;
     display: flex;
-  
-    &-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        width: 100%;
-        padding-bottom: 12px;
-    }
 
     &-txt {
-        overflow: hidden;
-        white-space: nowrap;
+            overflow: hidden;
+            white-space: nowrap;
+        flex: 1;
+        padding: 10px;
 
         .font-heavy-para {
             font-size: 18px;
             font-weight: 500;
-            padding: 12px 0 0 20px;
+            margin-bottom: 2px;
         }
         p {
             font-size: 15px;
             font-weight: 300;
-            padding: 5px 0 0 20px;
+            text-overflow: ellipsis;       
         }   
 }       
-    .overflow {
-        text-overflow: ellipsis;      
-    }   
     
     .price {
+        width: 40px;
         font-size: 15px;
         font-weight: 500;
-        padding-right: 12px;
+        padding: 40px 0 5px 5px;
+        
     }
 }
 

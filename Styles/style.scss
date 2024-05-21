@@ -9,7 +9,6 @@
 @import "layouts/_pagesRestaurants.scss";
 @import "components/_animations.scss";
 @import "responsive/_desktop.scss";
-@import "responsive/_tablet.scss";
 
 
 
@@ -34,10 +33,6 @@
     margin-bottom: 50px;
     background-color: white;
 
-     .section {
-            display: flex;
-            flex: 1;
-
         .number {
             @extend %flex-center;
             height: 24px;
@@ -57,6 +52,7 @@
             margin: 15px 20px 15px 25px;
             box-shadow: $box-shadow;
             position: relative;
+            flex: 1;
 
             &--content {
                 @extend %flex-center;
@@ -71,7 +67,6 @@
             font-weight: 500;
             }
         }
-    }
 }
 
 /***** Section Restaurants *****/

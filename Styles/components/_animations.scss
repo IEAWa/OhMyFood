@@ -1,9 +1,8 @@
 
 
 /*** Animations checked menus *****/ 
- 
 .check {   
-    width: 80px;
+    width: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,23 +19,15 @@
     }
 }
 
-
-@keyframes checked {
-    0% { transform: scaleX(0);}
-}
-
-.menu-card-content:hover + .check {
+.menu-card:hover + .check {
     animation: checked 200ms both;
 }
 
-.menu-card-content:not(:hover) + .check {
+.menu-card:not(:hover) + .check {
     display: none;
 }
 
-
-
 /*** Apparition progressive des cartes menu***/
-
 @keyframes slide-in {
     0% {opacity: 0;}
     100% {opacity: 1;}
@@ -54,15 +45,73 @@
     100% {opacity: 1;}
 }
 
-
 .animation-entrées {
-    animation: slide-in 400ms;
-}
+    animation: slide-in 400ms; }
 
 .animation-plats {
-    animation: slide-in-2 800ms;
-}
+    animation: slide-in-2 800ms; }
 
 .animation-desserts {
-    animation: slide-in-3 1.2s;
+    animation: slide-in-3 1.2s; }
+
+
+ /******** loader ********/
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #353535;
+    z-index: 4;
+    animation: load 3s forwards;
+
+    &--title {
+        font-family:'shrikhand';
+        font-size: 34px;
+        color: #EAEAEA;
+    }
 }
+
+.loader::before {
+    position: absolute;
+    content: "";
+    width: 270px;
+    height: 270px;
+    border: 8px solid #353535;
+    border-left-color: #9356DC;
+    border-radius: 50%;
+    animation: loading 2.7s 300ms ease;
+}
+
+.loader::after {
+    position: absolute;
+    content: "";
+    width: 240px;
+    height: 240px;
+    border: 8px solid #353535;
+    border-top-color: #EAEAEA;
+    border-radius: 50%;
+    animation: loading 3s ease;
+}
+
+
+@keyframes loading {
+    from {transform: rotate(0turn);}
+    to {transform: rotate(3turn);}
+}
+
+@keyframes load {
+    0% {opacity: 1;
+        transform: scale(1);}
+
+    95% {opacity: 1;
+        transform: scale(1);}
+
+    100% {opacity: 0;
+        transform: scale(0);}
+}
+

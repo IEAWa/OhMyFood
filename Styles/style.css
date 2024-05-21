@@ -3,7 +3,7 @@
 /* Variables couleurs de fond*/
 /* Ombres des boutons et cards*/
 /*Centrer les éléments*/
-.card--content + .new, .restaurants--cards, .fonctionnement .section .box--content, .fonctionnement .section .box, .fonctionnement .section .number, .order-section .button, .order-section {
+.card--content + .new, .restaurants--cards, .fonctionnement .box--content, .fonctionnement .box, .fonctionnement .number, .order-section .button, .order-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,34 +259,27 @@ section .section-title {
   box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
   display: flex;
 }
-.menu-card-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  width: 100%;
-  padding-bottom: 12px;
-}
 .menu-card-txt {
   overflow: hidden;
   white-space: nowrap;
+  flex: 1;
+  padding: 10px;
 }
 .menu-card-txt .font-heavy-para {
   font-size: 18px;
   font-weight: 500;
-  padding: 12px 0 0 20px;
+  margin-bottom: 2px;
 }
 .menu-card-txt p {
   font-size: 15px;
   font-weight: 300;
-  padding: 5px 0 0 20px;
-}
-.menu-card .overflow {
   text-overflow: ellipsis;
 }
 .menu-card .price {
+  width: 40px;
   font-size: 15px;
   font-weight: 500;
-  padding-right: 12px;
+  padding: 40px 0 5px 5px;
 }
 
 /******* Bouton pour commander ********/
@@ -304,7 +297,7 @@ section .section-title {
 
 /*** Animations checked menus *****/
 .check {
-  width: 80px;
+  width: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,16 +314,11 @@ section .section-title {
           clip-path: circle(40%);
 }
 
-@keyframes checked {
-  0% {
-    transform: scaleX(0);
-  }
-}
-.menu-card-content:hover + .check {
+.menu-card:hover + .check {
   animation: checked 200ms both;
 }
 
-.menu-card-content:not(:hover) + .check {
+.menu-card:not(:hover) + .check {
   display: none;
 }
 
@@ -377,46 +365,70 @@ section .section-title {
   animation: slide-in-3 1.2s;
 }
 
-@media screen and (min-width: 1025px) {
-  /**** Fonctionnement ****/
-  .fonctionnement {
-    padding: 0 300px;
-  }
-  /**** Restaurants ****/
-  .restaurants {
-    padding-right: 300px;
-    padding-left: 300px;
-  }
-  .restaurant--cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  .restaurant--cards > a {
-    width: 47%;
-  }
-  /********* Pages des menus *******/
-  .main {
-    margin: 0 210px;
-    position: relative;
-    top: -55px;
-    margin-bottom: -55px;
-  }
-  section {
-    padding: 0 210px 40px 210px;
-  }
+/******** loader ********/
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  z-index: 4;
+  animation: load 3s forwards;
 }
-/**** Loader animation dimensions****/
+.loader--title {
+  font-family: "shrikhand";
+  font-size: 34px;
+  color: #EAEAEA;
+}
+
 .loader::before {
-  width: 390px;
-  height: 390px;
+  position: absolute;
+  content: "";
+  width: 270px;
+  height: 270px;
+  border: 8px solid #353535;
+  border-left-color: #9356DC;
+  border-radius: 50%;
+  animation: loading 2.7s 300ms ease;
 }
 
 .loader::after {
-  width: 350px;
-  height: 350px;
+  position: absolute;
+  content: "";
+  width: 240px;
+  height: 240px;
+  border: 8px solid #353535;
+  border-top-color: #EAEAEA;
+  border-radius: 50%;
+  animation: loading 3s ease;
 }
 
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(3turn);
+  }
+}
+@keyframes load {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  95% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
 @media screen and (min-width: 767.8px) {
   /********* Page d'acceuil ********/
   h1 {
@@ -425,15 +437,15 @@ section .section-title {
   }
   /**** Fonctionnement ****/
   .fonctionnement {
-    padding: 0 70px;
+    padding: 0 300px;
   }
   .fonctionnement .boxes-direction {
     display: flex;
   }
   /**** Restaurants ****/
   .restaurants {
-    padding-right: 70px;
-    padding-left: 70px;
+    padding-right: 300px;
+    padding-left: 300px;
   }
   .restaurant--cards {
     display: flex;
@@ -468,7 +480,7 @@ section .section-title {
     height: 380px;
   }
   .main {
-    margin: 0 70px;
+    margin: 0 210px;
     position: relative;
     top: -55px;
     margin-bottom: -55px;
@@ -481,7 +493,16 @@ section .section-title {
     padding: 0 0 20px 25px;
   }
   section {
-    padding: 0 70px 40px 70px;
+    padding: 0 210px 40px 210px;
+  }
+  /**** Loader animation dimensions****/
+  .loader::before {
+    width: 390px;
+    height: 390px;
+  }
+  .loader::after {
+    width: 350px;
+    height: 350px;
   }
 }
 /***** Intro *****/
@@ -504,11 +525,7 @@ section .section-title {
   margin-bottom: 50px;
   background-color: white;
 }
-.fonctionnement .section {
-  display: flex;
-  flex: 1;
-}
-.fonctionnement .section .number {
+.fonctionnement .number {
   height: 24px;
   width: 24px;
   color: white;
@@ -517,21 +534,22 @@ section .section-title {
   position: absolute;
   left: -10px;
 }
-.fonctionnement .section .box {
+.fonctionnement .box {
   padding: 10px 20px;
   background-color: #F3F3F3;
   border-radius: 20px;
   margin: 15px 20px 15px 25px;
   box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
   position: relative;
+  flex: 1;
 }
-.fonctionnement .section .box--content {
+.fonctionnement .box--content {
   position: relative;
 }
-.fonctionnement .section .box i {
+.fonctionnement .box i {
   color: grey;
 }
-.fonctionnement .section .box p {
+.fonctionnement .box p {
   padding: 10px 0 10px 10px;
   font-size: 14px;
   font-weight: 500;
