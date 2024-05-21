@@ -1,40 +1,35 @@
 
 
-@media screen and (min-width:768px) {
-
-    /********* Page d'acceuil ********/
+@media screen and (min-width:1025px) {
 
 /**** Fonctionnement ****/
-
 .fonctionnement {
-    .boxes-direction {
-        display: flex;
-}
+    padding: 0 300px;
 }
 
 /**** Restaurants ****/
-.restaurant--cards {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;   
+.restaurants {
+    padding-right: 300px;
+    padding-left: 300px;
 }
 
-a {
-.cards {
-        width: 45%;
-    }}
-
-
-/**** Footer ****/
-footer {
+.restaurant--cards {
     display: flex;
-    justify-content: flex-end;
-
-    .logo-txt {
-
-    }
+    justify-content: space-between;
+    flex-wrap: wrap;   
+    
+    & > a { width: 47%; }
 }
 
      /********* Pages des menus *******/
 
+.main { margin: 0 210px;
+       position: relative;
+       top: -55px;
+       margin-bottom: -55px;
+}
+
+section { 
+    padding: 0 210px 40px 210px;
+}
 }

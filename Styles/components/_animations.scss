@@ -3,13 +3,13 @@
 /*** Animations checked menus *****/ 
  
 .check {   
-    flex: 1;
+    width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $third-main-color;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     transform-origin: right;
 
     .fa-regular.fa-circle-check {
@@ -25,11 +25,11 @@
     0% { transform: scaleX(0);}
 }
 
-.menu-card-content:active + .check {
+.menu-card-content:hover + .check {
     animation: checked 200ms both;
 }
 
-.menu-card-content:not(:active) + .check {
+.menu-card-content:not(:hover) + .check {
     display: none;
 }
 

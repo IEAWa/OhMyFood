@@ -7,8 +7,10 @@
 @import "layouts/_header.scss";
 @import "layouts/_footer.scss";
 @import "layouts/_pagesRestaurants.scss";
-@import "animations/_animations.scss";
-@import "responsive/desktop.scss";
+@import "components/_animations.scss";
+@import "responsive/_desktop.scss";
+@import "responsive/_tablet.scss";
+
 
 
 /***** Intro *****/
@@ -19,12 +21,10 @@
     padding: 0 25px 50px 25px;
     text-align: center;
 
-    &--para {padding: 15px 0 20px 0;
-       font-size: 18px}
+    &--para { padding: 15px 0 20px 0;
+       font-size: 18px; }
 
-    a {
-        box-shadow: $box-shadow;
-    }
+    a { box-shadow: $box-shadow; }
 }
 
 /***** Section Fonctionnement *****/
@@ -42,25 +42,30 @@
             height: 24px;
             width: 24px;
             color: white;
+            border-radius: 50%; 
             background-color: $main-color;
             position: absolute;
-            left: 14px;
-            border-radius: 50%;    
+            left: -10px;
         }
 
         .box {
             @extend %flex-center;
-            flex: 1;
-            font-weight: 500;
-            padding: 10px 20px 10px 20px;
+            padding: 10px 20px;
             background-color: $main-background-color;
             border-radius: 20px;
             margin: 15px 20px 15px 25px;
             box-shadow: $box-shadow;
+            position: relative;
 
-            & > i {color: grey;}
+            &--content {
+                @extend %flex-center;
+                position: relative;
+            }
 
-            & > p {padding: 10px 0 10px 10px;
+            i {color: grey;}
+
+            p {
+            padding: 10px 0 10px 10px;
             font-size: 14px;
             font-weight: 500;
             }
@@ -72,22 +77,22 @@
 
 .restaurants {
     background-color: $main-background-color;
-    padding: 10px 10px 40px 10px;
-    
+    padding-top: 30px;
+    padding-bottom: 40px;
+
     &--cards {
     @extend %flex-center;
     }
 }
 
 .card {
-    height: 251px;
     border-radius: 15px;
     background-color: white;
     margin: 15px;
     position: relative;  
 
     & > img {
-        height: 75%;
+        height: 230px;
         width: 100%;
         border-radius: 15px 15px 0 0;
         object-fit: cover;
@@ -103,11 +108,10 @@
         @extend %flex-center;
         border-radius: 2px;
         color: #008766;
-        height: 29px;
-        width: 80px;
+        padding: 7px 12px;
         position: absolute;
         top: 15px;
-        left: 270px;
+        right: 15px;
         } 
     }   
 }

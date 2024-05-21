@@ -3,7 +3,7 @@
 /* Variables couleurs de fond*/
 /* Ombres des boutons et cards*/
 /*Centrer les éléments*/
-.card--content + .new, .restaurants--cards, .fonctionnement .section .box, .fonctionnement .section .number, .fonctionnement .section, .order-section .button, .order-section, .restau-location, .logo {
+.card--content + .new, .restaurants--cards, .fonctionnement .section .box--content, .fonctionnement .section .box, .fonctionnement .section .number, .fonctionnement .section, .order-section .button, .order-section, .restau-location {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,12 +41,11 @@ est plus large***/
 /*** Icone favoris ***/
 .favorite {
   cursor: pointer;
-  padding-right: 30px;
+  padding: 0 30px 25px 0;
 }
 .favorite i {
   position: absolute;
   font-size: 22px;
-  bottom: 20px;
 }
 .favorite--full {
   opacity: 0;
@@ -86,9 +85,15 @@ p {
   padding: 2px 0 2px;
 }
 
-h1, h2, h3 {
+h1, h2 {
   font-size: 24px;
   padding: 30px 20px 10px 20px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 24px;
+  padding: 10px 20px;
   margin: 0;
 }
 
@@ -139,15 +144,22 @@ i {
 /**** Header ****/
 /*** Logo ***/
 .logo {
+  display: flex;
+  align-items: center;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .logo i {
   font-size: 18px;
-  position: relative;
-  right: 70px;
+  padding-left: 20px;
 }
-.logo img {
-  padding: 15px 0 15px 0;
+.logo--title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-right: 20px;
+}
+.logo--title img {
+  padding: 15px 0;
   height: 44px;
   width: 162px;
 }
@@ -200,6 +212,7 @@ footer a {
 /****** Page 1 du site *******/
 .menu-image > img {
   width: 100%;
+  height: 275px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -219,6 +232,7 @@ footer a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   padding: 0 20px 0 15px;
 }
 
@@ -237,16 +251,16 @@ section .section-title {
 .menu-card {
   background-color: white;
   font-weight: 500;
-  border-radius: 20px;
+  border-radius: 15px;
   margin: 10px 10px 0 10px;
   box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
   display: flex;
 }
 .menu-card-content {
   display: flex;
-  flex: 5;
   justify-content: space-between;
   align-items: flex-end;
+  width: 100%;
   padding-bottom: 12px;
 }
 .menu-card-txt {
@@ -286,13 +300,13 @@ section .section-title {
 
 /*** Animations checked menus *****/
 .check {
-  flex: 1;
+  width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #99E2D0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   transform-origin: right;
 }
 .check .fa-regular.fa-circle-check {
@@ -308,11 +322,11 @@ section .section-title {
     transform: scaleX(0);
   }
 }
-.menu-card-content:active + .check {
+.menu-card-content:hover + .check {
   animation: checked 200ms both;
 }
 
-.menu-card-content:not(:active) + .check {
+.menu-card-content:not(:hover) + .check {
   display: none;
 }
 
@@ -359,27 +373,101 @@ section .section-title {
   animation: slide-in-3 1.2s;
 }
 
-@media screen and (min-width: 768px) {
-  /********* Page d'acceuil ********/
+@media screen and (min-width: 1025px) {
   /**** Fonctionnement ****/
+  .fonctionnement {
+    padding: 0 300px;
+  }
+  /**** Restaurants ****/
+  .restaurants {
+    padding-right: 300px;
+    padding-left: 300px;
+  }
+  .restaurant--cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .restaurant--cards > a {
+    width: 47%;
+  }
+  /********* Pages des menus *******/
+  .main {
+    margin: 0 210px;
+    position: relative;
+    top: -55px;
+    margin-bottom: -55px;
+  }
+  section {
+    padding: 0 210px 40px 210px;
+  }
+}
+@media screen and (min-width: 767.8px) {
+  /********* Page d'acceuil ********/
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+  }
+  /**** Fonctionnement ****/
+  .fonctionnement {
+    padding: 0 70px;
+  }
   .fonctionnement .boxes-direction {
     display: flex;
   }
   /**** Restaurants ****/
+  .restaurants {
+    padding-right: 70px;
+    padding-left: 70px;
+  }
   .restaurant--cards {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
-  a .cards {
-    width: 45%;
+  .restaurant--cards > a {
+    width: 47%;
   }
   /**** Footer ****/
   footer {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 35px 15px 5px 0;
+  }
+  footer .footer-title {
+    padding: 0 50px;
+  }
+  footer .footer-txt {
+    display: flex;
+  }
+  footer .footer-txt .icon-txt {
+    padding-right: 15px;
+  }
+  footer .footer-txt p, footer .footer-txt a {
+    padding-right: 7px;
   }
   /********* Pages des menus *******/
+  .menu-image > img {
+    height: 380px;
+  }
+  .main {
+    margin: 0 70px;
+    position: relative;
+    top: -55px;
+    margin-bottom: -55px;
+  }
+  .restau-title {
+    display: flex;
+    justify-content: center;
+  }
+  .restau-title .favorite {
+    padding: 0 0 20px 25px;
+  }
+  section {
+    padding: 0 70px 40px 70px;
+  }
 }
 /***** Intro *****/
 .intro {
@@ -405,24 +493,26 @@ section .section-title {
   height: 24px;
   width: 24px;
   color: white;
+  border-radius: 50%;
   background-color: #9356DC;
   position: absolute;
-  left: 14px;
-  border-radius: 50%;
+  left: -10px;
 }
 .fonctionnement .section .box {
-  flex: 1;
-  font-weight: 500;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   background-color: #F3F3F3;
   border-radius: 20px;
   margin: 15px 20px 15px 25px;
   box-shadow: 1px 6px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
-.fonctionnement .section .box > i {
+.fonctionnement .section .box--content {
+  position: relative;
+}
+.fonctionnement .section .box i {
   color: grey;
 }
-.fonctionnement .section .box > p {
+.fonctionnement .section .box p {
   padding: 10px 0 10px 10px;
   font-size: 14px;
   font-weight: 500;
@@ -431,17 +521,17 @@ section .section-title {
 /***** Section Restaurants *****/
 .restaurants {
   background-color: #F3F3F3;
-  padding: 10px 10px 40px 10px;
+  padding-top: 30px;
+  padding-bottom: 40px;
 }
 .card {
-  height: 251px;
   border-radius: 15px;
   background-color: white;
   margin: 15px;
   position: relative;
 }
 .card > img {
-  height: 75%;
+  height: 230px;
   width: 100%;
   border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
@@ -457,9 +547,8 @@ section .section-title {
   background-color: #99E2D0;
   border-radius: 2px;
   color: #008766;
-  height: 29px;
-  width: 80px;
+  padding: 7px 12px;
   position: absolute;
   top: 15px;
-  left: 270px;
+  right: 15px;
 }/*# sourceMappingURL=style.css.map */

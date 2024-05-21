@@ -21,7 +21,9 @@
     <!------ Header ------>
     <header>
         <div class="logo z-index-logo">
-           <img class="image" src="Images&textes/images/logo/ohmyfood@2x.svg" alt="logo">
+            <div class="logo--title">
+                <img class="image" src="Images&textes/images/logo/ohmyfood@2x.svg" alt="logo">
+            </div>
         </div>
         <div class="restau-location z-index-location">
            <label for="location"><i class="fa-solid fa-location-dot"></i></label>
@@ -30,9 +32,9 @@
     </header>
 
     <!------ Sous-header: Introduction du site ------>
-    <main class="z-index-main">
+    <main>
     
-        <div class="intro">
+        <div class="intro" class="z-index-main">
             <h1>Réservez le menu qui vous convient</h1>
             <p class="intro--para">Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
             <a href="#restaurants" class="button">
@@ -46,23 +48,29 @@
         <div class="boxes-direction">
             <div class="section">
                 <div class="box">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                    <p>Choisissez un restaurant</p>
+                    <div class="box--content">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <p>Choisissez un restaurant</p>
+                    </div>
                     <div class="number">1</div>
                 </div>
             </div>
             <div class="section">
                 <div class="box">
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                    <i class="fa-solid fa-bars"></i>
-                    <p>Composez votre menu</p>
+                    <div class="box--content">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                        <i class="fa-solid fa-bars"></i>
+                        <p>Composez votre menu</p>
+                    </div>
                     <div class="number">2</div>
                 </div>
             </div>
             <div class="section">
                 <div class="box">
-                    <i class="fa-solid fa-store"></i>
-                    <p>Dégustez au restaurant</p>
+                    <div class="box--content">
+                        <i class="fa-solid fa-store"></i>
+                        <p>Dégustez au restaurant</p>
+                    </div>
                     <div class="number">3</div>
                 </div>
             </div>
@@ -145,7 +153,10 @@
    
     <!------ Footer ------>
     <footer>
+        <div class="footer-title">
             <p class="logo-txt">Ohmyfood</p>
+        </div>
+        <div class="footer-txt">
             <div class="icon-txt">
                 <i class="fa-solid fa-utensils"></i>
                 <p>Proposer un restaurant</p>
@@ -156,7 +167,7 @@
             </div>
             <p>Mentions légales</p>
             <a href="#">Contact</a>
-    </footer>
-    
+        </div>
+    </footer>   
 </body>
 </html>

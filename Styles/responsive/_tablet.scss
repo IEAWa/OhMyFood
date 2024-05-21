@@ -1,0 +1,76 @@
+
+@media screen and (min-width:767.8px) {
+    /********* Page d'acceuil ********/
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+/**** Fonctionnement ****/
+.fonctionnement {
+    padding: 0 70px;
+    .boxes-direction {
+        display: flex;
+}
+}
+
+/**** Restaurants ****/
+.restaurants {
+    padding-right: 70px;
+    padding-left: 70px;
+}
+
+.restaurant--cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;   
+    
+    & > a { width: 47%; }
+}
+
+/**** Footer ****/
+footer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 35px 15px 5px 0;
+
+    .footer-title {
+        padding: 0 50px;
+    }
+
+    .footer-txt {
+        display: flex;
+
+        .icon-txt { padding-right: 15px; } 
+        p, a { padding-right: 7px; }
+    }
+}
+
+     /********* Pages des menus *******/
+
+ .menu-image {
+     & > img {
+        height: 380px;}
+}
+
+.main { margin: 0 70px;
+       position: relative;
+       top: -55px;
+       margin-bottom: -55px;
+}
+
+.restau-title {
+    display: flex;
+    justify-content: center;
+
+    .favorite {
+        padding: 0 0 20px 25px;
+    }
+}
+section { 
+    padding: 0 70px 40px 70px;
+}
+}
+

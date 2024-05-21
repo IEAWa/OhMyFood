@@ -3,12 +3,11 @@
 
 .favorite {
     cursor: pointer;
-    padding-right: 30px;
+    padding: 0 30px 25px 0;
     
     & i {
         position: absolute;
         font-size: 22px;
-        bottom: 20px;
     }
     
     &--full {
