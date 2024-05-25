@@ -3,7 +3,10 @@
 .button {
     border-radius: 30px;
     background: linear-gradient($second-main-color, $main-color);
-    box-shadow: $box-shadow;    
+    box-shadow: $box-shadow; 
+    &:hover {
+        @include hover-button;
+    }
 }
 
 /*** Style du contenu des boutons***/

@@ -19,11 +19,11 @@
     }
 }
 
-.menu-card:hover + .check {
+.menu-card:hover > .check {
     animation: checked 200ms both;
 }
 
-.menu-card:not(:hover) + .check {
+.menu-card:not(:hover) > .check {
     display: none;
 }
 

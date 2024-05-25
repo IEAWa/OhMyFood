@@ -51,8 +51,8 @@ section {
     display: flex;
 
     &-txt {
-            overflow: hidden;
-            white-space: nowrap;
+        overflow: hidden;
+        white-space: nowrap;
         flex: 1;
         padding: 10px;
 
@@ -60,10 +60,11 @@ section {
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 2px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         p {
-            font-size: 15px;
-            font-weight: 300;
+            overflow: hidden;
             text-overflow: ellipsis;       
         }   
 }       
