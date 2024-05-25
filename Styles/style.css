@@ -274,6 +274,8 @@ section .section-title {
   text-overflow: ellipsis;
 }
 .menu-card-txt p {
+  font-size: 15px;
+  font-weight: 300;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -439,15 +441,14 @@ section .section-title {
   }
   /**** Fonctionnement ****/
   .fonctionnement {
-    padding: 0 300px;
+    padding: 0 125px;
   }
   .fonctionnement .boxes-direction {
     display: flex;
   }
   /**** Restaurants ****/
   .restaurants {
-    padding-right: 300px;
-    padding-left: 300px;
+    padding: 0 125px;
   }
   .restaurant--cards {
     display: flex;
@@ -482,7 +483,7 @@ section .section-title {
     height: 380px;
   }
   .main {
-    margin: 0 210px;
+    margin: 0 150px;
     position: relative;
     top: -55px;
     margin-bottom: -55px;
@@ -495,7 +496,7 @@ section .section-title {
     padding: 0 0 20px 25px;
   }
   section {
-    padding: 0 210px 40px 210px;
+    padding: 0 150px 30px 150px;
   }
   /**** Loader animation dimensions****/
   .loader::before {
@@ -567,7 +568,7 @@ section .section-title {
   position: relative;
 }
 .card > img {
-  height: 230px;
+  height: 225px;
   width: 100%;
   border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
