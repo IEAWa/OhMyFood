@@ -10,17 +10,18 @@
     }
     
     &--full {
-        opacity: 0;
         background: linear-gradient($main-color,$second-main-color);
         color: transparent;
         background-clip: text;
+        opacity: 0;
+        transition: opacity 500ms ease;
             
         &:hover {
-            opacity: 1;
             background-image: linear-gradient($main-color,$second-main-color);
             color: transparent;
             display: inline;
             background-clip: text;
+            opacity: 1;
         }
     } 
 }

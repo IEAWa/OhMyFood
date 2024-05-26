@@ -10,6 +10,8 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in;
 
     .fa-regular.fa-circle-check {
         font-size: 25px;
@@ -20,12 +22,15 @@
 }
 
 .menu-card:hover > .check {
-    animation: checked 200ms both;
+    transform: scaleX(1);
 }
 
 .menu-card:not(:hover) > .check {
-    display: none;
+    transform: scaleX(0);
+    width: auto;
 }
+
+
 
 /*** Apparition progressive des cartes menu***/
 @keyframes slide-in {
